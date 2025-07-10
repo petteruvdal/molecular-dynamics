@@ -107,6 +107,8 @@ include my_epoxy.params
 ## 🧠 Notes
 
 - Ensure EMC is installed and `emc` is accessible from your shell.
+- emc_setup.pl must be downloaded (from the EMC package) and placed in your working directory.
+- You can optionally make emc_setup.pl executable and callable like emc.
 - You can visualize `.pdb` or `.vmd` outputs using VMD or OVITO.
 
 ---
