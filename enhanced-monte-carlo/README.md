@@ -9,7 +9,6 @@ We use EMC to pack monomers (e.g. epoxy) with appropriate force field parameters
 ## 📁 Folder Contents
 
 ```
-epoxy.pdb                        # Structure of the epoxy monomer
 epoxy_pack.emc                   # EMC input script
 run_emc.sh                       # Bash script to execute EMC
 opls-aa/                         # Force field directory
@@ -20,44 +19,28 @@ opls-aa/                         # Force field directory
 
 ## 🛠️ How to Use
 
-### 1. Edit the EMC script
+### 1. Edit the ESH script
 
-Create a file called `epoxy_pack.emc`:
+Create a file called `my_epoxy.esh`:
 
-```emc
-(* EMC: Script *)
+```esh
+#!/usr/bin/env emc.pl                      
 
-variables = {
-  seed            -> 12345,
-  ntotal          -> 1,
-  output          -> "epoxy_lammps",
-  field           -> "opls-aa",
-  location1       -> "./opls-aa/",
-  density1        -> 1.1,
-  temperature     -> 300
-};
+ITEM OPTIONS
+replace		true
+# mass		  true
+ntotal		24
+density		0.2
+field		  opls/2024/opls-aa
+# build_dir	.
+ITEM		END
 
-pdb = {
-  name -> "epoxy",
-  forcefield -> opls
-};
+ITEM SHORTHAND
+epoxy,    C1C(O1)COC2=CC=C(C=C2)CC3=CC=C(C=C3)OCC4CO4,   67   # 16 / 24
+hardener, NCCNCCNCCN,                                    33   #  8 / 24
+ITEM END
 
-systems = {
-  {
-    molecules -> {epoxy -> 1},
-    density -> 1.1,
-    name -> "epoxybox",
-    origin -> {0.0, 0.0, 0.0},
-    relax -> {ncycles -> 100, radius -> 5.0}
-  }
-};
-
-out = {
-  name -> "epoxy_lammps",
-  lammps -> true,
-  forcefield -> true,
-  pdb -> true
-};
+ITEM		END
 ```
 
 ---
