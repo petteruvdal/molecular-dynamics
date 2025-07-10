@@ -40,7 +40,7 @@ ITEM END
 Then run the EMC setup script:
 
 ```bash
-perl */emc_setup.pl -replace my_epoxy.esh
+perl emc_setup.pl -replace my_epoxy.esh
 ```
 
 ---
