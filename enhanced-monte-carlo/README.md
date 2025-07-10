@@ -9,10 +9,8 @@ We use EMC to pack monomers (e.g. epoxy) with appropriate force field parameters
 ## 📁 Folder Contents
 
 ```
-epoxy_pack.emc                   # EMC input script
-run_emc.sh                       # Bash script to execute EMC
-opls-aa/                         # Force field directory
-└── opls-aa.field                # OPLS-AA parameter file
+my_epoxy.esh                     # EMC input script
+build.emc
 ```
 
 ---
@@ -45,33 +43,30 @@ ITEM		END
 
 ---
 
-### 2. Create the run script
-
-Create a file called `run_emc.sh`:
+Then run it executable:
 
 ```bash
-#!/bin/bash
-# Run EMC to generate LAMMPS input files
-
-emc -i epoxy_pack.emc
+perl */emc_setup.pl -replace my_epoxy.esh
 ```
 
-Make it executable:
+### 2. Edit the build script
 
-```bash
-chmod +x run_emc.sh
+You now have a file called `build.emc`:
+
+Change number of molecules:
+
+```emc
+    id		-> epoxy, system -> main, group -> epoxy, n -> n_epoxy},
+  cluster	-> {
+    id		-> hardener, system -> main, group -> hardener, n -> n_hardener}
 ```
 
-Then run it:
+To:
 
-```bash
-./run_emc.sh
-```
-
-Alternatively, run directly:
-
-```bash
-emc -i epoxy_pack.emc
+```emc
+    id		-> epoxy, system -> main, group -> epoxy, n -> 16},
+  cluster	-> {
+    id		-> hardener, system -> main, group -> hardener, n -> 8}
 ```
 
 ---
@@ -105,8 +100,7 @@ include epoxy_lammps.field
 
 ## 🧠 Notes
 
-- `epoxy.pdb` must be valid (e.g., from PubChem or Open Babel).
-- `opls-aa/` should contain `opls-aa.field` (can be found in EMC package).
+- `opls-aa/` in the emc should contain `opls-aa.field` (can be found in EMC package).
 - EMC must be installed and callable via `emc` in terminal.
 
 ---
