@@ -1,0 +1,239 @@
+(* EMC: Enhanced Monte Carlo simulations *)
+
+version 9.4.4, build Apr 16 2025 07:36:34, date Thu Jul 10 15:41:21 2025
+
+valid until Jul 31, 2025
+
+Info: script v1.0 started at Thu Jul 10 15:41:21 2025
+Info: variables = {i -> 1, seed -> -1, ntotal -> 24, fshape -> 1, output ->
+        "my_epoxy", field -> "opls/2024/opls-aa", location1 ->
+        "~/Desktop/emc/emc/field/", nav -> 0.6022141179, temperature -> 300, 
+        radius -> 5, nrelax -> 100, weight_nonbond -> 0.0001, weight_bond ->
+        0.0001, weight_focus -> 1, cutoff -> 9.5, charge_cutoff -> 9.5, kappa
+        -> 4, density1 -> 0.2, lprevious -> 0, lphase -> 0, f_epoxy -> 67, 
+        f_hardener -> 33, chem_epoxy ->
+        "C1C(O1)COC2=CC=C(C=C2)CC3=CC=C(C=C3)OCC4CO4", chem_hardener ->
+        "NCCNCCNCCN"}
+Info: output = 
+      {detail -> 3, wide -> false, expand -> false, math -> true, reduced ->
+        false, info -> true, strict -> true, warning -> true, message -> true,
+        debug -> false, exit -> true, ignore -> false}
+Info: field = {id -> opls/2024/opls-aa, mode -> opls, style -> none, name ->
+        {"~/Desktop/emc/emc/field/opls/2024/opls-aa.prm", 
+          "~/Desktop/emc/emc/field/opls/2024/opls-aa.top"}, compress -> false,
+        error -> true, debug -> false, check -> {atomistic -> true, charge ->
+          true}}
+Info: importing '~/Desktop/emc/emc/field/opls/2024/opls-aa.prm'
+Info: groups = {ngroups -> 2, group -> {
+          {id -> epoxy, chemistry ->
+            "C1C(O1)COC2=CC=C(C=C2)CC3=CC=C(C=C3)OCC4CO4", depth -> 8, charges
+            -> field, charge -> 0, terminator -> false}, 
+          {id -> hardener, chemistry -> "NCCNCCNCCN", depth -> 8, charges ->
+            field, charge -> 0, terminator -> false}}, ndeletes -> 0, 
+        npolymers -> 0}
+Info: field = {mode -> apply, style -> none, error -> true, debug -> false, 
+        check -> {atomistic -> true, charge -> true}}
+Info: applying '~/Desktop/emc/emc/field/opls/2024/opls-aa.prm'
+Info: variables = {lg_epoxy -> 43, lg_hardener -> 28, l_epoxy -> 43, 
+        norm_epoxy -> 1, l_hardener -> 28, norm_hardener -> 1, mg_epoxy ->
+        312.3646, mg_hardener -> 146.235, m_epoxy -> 312.3646, m_hardener ->
+        146.235, f_epoxy -> 0.757161629435, f_hardener -> 0.242838370565, norm
+        -> 3805, n_epoxy -> 0, n_hardener -> 0, ntotal -> 0, mtotal -> 0}
+Info: simulation = {units -> {permittivity -> 1, seed -> seed}, types -> {
+          coulomb -> {pair -> {active -> true, cutoff -> charge_cutoff}}}}
+Info: clusters = {progress -> none, nbodys -> 0, nclusters -> 2, 
+        cluster -> {{id -> epoxy, system -> main, n -> 16, 
+            group -> epoxy}, {id -> hardener, system -> main, n -> 8, group ->
+            hardener}}, ngrafts -> 0, npolymers -> 0}
+      delta = {systems -> 1, bodies -> 0, clusters -> 24, sites -> 912}
+Info: field = {mode -> apply, style -> none, error -> true, debug -> false, 
+        check -> {atomistic -> true, charge -> true}}
+Info: applying '~/Desktop/emc/emc/field/opls/2024/opls-aa.prm'
+Info: types = {opls -> {pair -> {active -> true, mode -> repulsive}}}
+Info: variables = {nphase1 -> 912, mphase1 -> 6167.7136, vphase1 ->
+        51208.6433768, lbox -> 37.1348000826, lphase1 -> 37.1348000826, lxx ->
+        37.1348000826, lyy -> 37.1348000826, lzz -> 37.1348000826, lzy -> 0, 
+        lzx -> 0, lyx -> 0, lphase -> 37.1348000826, ntotal -> 912, mtotal ->
+        6167.7136, vtotal -> 51208.6433768}
+Info: build = {
+        system -> {id -> main, temperature -> 300, density -> 0.2, split ->
+          false, flag -> {charge -> true, map -> true, pbc -> true, geometry
+            -> true}, periodic -> {x -> true, y -> true, z -> true}, geometry
+          -> {xx -> 37.1348000826, yy -> 37.1348000826, zz -> 37.1348000826, 
+            zy -> 0, zx -> 0, yx -> 0}, deform -> {xx -> 1, yy -> 1, zz -> 1, 
+            zy -> 0, zx -> 0, yx -> 0}}, 
+        select -> {progress -> list, frequency -> 1, message -> nkt, center ->
+          false, origin -> {x -> 0, y -> 0, z -> 0}, order -> random, check ->
+          true, nclusters -> 2, cluster -> {epoxy, hardener}, 
+          relax -> {ncycles -> 100, radius -> 5}, name -> "error", 
+          grow -> {check -> all, method -> energetic, cutoff -> 0, 
+            weight -> {nonbonded -> 0.0001, bonded -> 0.0001, focus -> 1}, 
+            theta -> 0, dphi -> 1, nbonded -> 20, ntrials -> 20, niterations
+            -> 1000}}}
+Info: building 912 sites.
+
+   progress/%      E[0]/nkT
+---------------------------
+            0             0
+            1      20.15352
+            2      32.38404
+            3      29.18989
+            4       22.3593
+            5      26.73189
+            6      26.40074
+            7      29.47434
+            8      29.72213
+            9      31.44058
+           10      33.52749
+           11      33.33953
+           12      32.81533
+           13      31.02252
+           14      29.37318
+           15      27.88826
+           16      26.55055
+           17      25.19764
+           18      23.95458
+           19      22.98593
+           20      21.95682
+           21      20.96992
+           22      20.21996
+           23      19.56109
+           24      18.85829
+           25       18.1038
+           26      17.48326
+           27      16.86146
+           28      16.40311
+           29      15.89466
+           30      15.33404
+           31      14.91022
+           32      14.85152
+           33      14.41354
+           34      14.03555
+           35      13.84153
+           36      13.59789
+           37      13.45535
+           38      13.16578
+           39      12.80991
+           40      12.54376
+           41       12.4082
+           42      12.08902
+           43      12.04196
+           44      11.85723
+           45      11.53973
+           46      11.38995
+           47      11.13858
+           48      11.01649
+           49      10.83298
+           50      10.67854
+           51      10.56012
+           52      10.42342
+           53      10.23885
+           54       10.1367
+           55      10.05231
+           56      9.884567
+           57      9.744715
+           58      9.590522
+           59      9.501396
+           60      9.380377
+           61      9.296111
+           62      9.174585
+           63      9.105372
+           64      9.014222
+           65      8.880049
+           66      8.845766
+           67      8.762466
+           68       8.68818
+           69      8.578109
+           70      8.504695
+           71      8.456973
+           72       8.68858
+           73      8.604079
+           74      8.509043
+           75      8.478059
+           76      8.416497
+           77      8.365984
+           78      8.291667
+           79      8.272422
+           80      8.691882
+           81      8.707519
+           82      8.621382
+           83      8.562993
+           84      8.478099
+           85      8.358427
+           86      8.263301
+           87      8.459215
+           88      8.772029
+           89       8.95819
+           90      9.301528
+           91      9.255533
+           92      9.690843
+           93       9.86358
+           94      9.784281
+           95       10.0352
+           96      10.56169
+           97      10.50984
+           98      10.76861
+           99      11.25951
+          100      11.44649
+---------------------------
+      average        14.372
+
+      niterations = 912, <niterations> = 1
+Info: force = {style -> none, message -> nkt}
+
+(* Energy *)
+
+                         E[0]/nkT 
+---------------------------------
+opls.angle               8.156993 
+opls.bond               0.6949917 
+opls.improper                   0 
+opls.pair               0.3008165 
+opls.pair14                1.7324 
+opls.torsion             0.561288 
+---------------------------------
+total                    11.44649 
+
+Info: force = {style -> init, message -> nkt}
+
+(* Energy *)
+
+                         E[0]/nkT 
+---------------------------------
+opls.angle               8.156993 
+opls.bond               0.6949917 
+opls.improper                   0 
+opls.pair               0.3008165 
+opls.pair14                1.7324 
+opls.torsion             0.561288 
+---------------------------------
+total                    11.44649 
+
+Info: put = {name -> "my_epoxy", compress -> true, detail -> 3}
+Info: pdb = {name -> "my_epoxy", compress -> true, extend -> false, mode ->
+        put, system -> main, length -> auto, forcefield -> opls, atomistic ->
+        full, depth -> auto, charges -> false, detect -> false, atom -> index,
+        residue -> index, segment -> index, rank -> false, hexadecimal ->
+        false, cut -> false, pbc -> true, map -> false, unwrap -> clusters, 
+        rigid -> true, fixed -> true, licorice -> false, vdw -> false, 
+        connectivity -> false, crystal -> false, element -> auto, parameters
+        -> false, flag -> {charge -> true, map -> true, pbc -> true, geometry
+          -> true}}
+Info: lammps = {name -> "my_epoxy", compress -> false, system -> main, mode ->
+        put, length -> auto, units -> none, forcefield -> opls, shake -> auto,
+        atomistic -> none, detect -> true, cutoff -> false, charges -> true, 
+        ewald -> true, ellipsoid -> false, sphere -> false, bonds -> false, 
+        types -> false, data -> true, parameters -> true, cross -> false, 
+        variables -> true, coefficients -> true, comment -> true, map -> true,
+        unwrap -> true, flag -> {charge -> true, map -> true, pbc -> true, 
+          geometry -> true}}
+Info: tsc: bonded = {1.413, 0.5433, 0.2568, 0.5264, 0.01257, 0} s
+Info: tsc: simulation = 4.06 s, threads = 2.125 s
+Info: tsc: thread = 1.835 s
+Info: script v1.0 finished at Thu Jul 10 15:41:25 2025
+
+Info: Thank you for using EMC v9.4.4
+Info: In any publication of scientific results based in part or
+Info: completely on the use of EMC, please include this reference:
+Info: P.J. in 't Veld and G.C. Rutledge, Macromolecules 2003, 36, 7358
+

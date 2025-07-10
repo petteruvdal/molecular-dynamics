@@ -1,0 +1,28 @@
+#!/usr/bin/env emc.pl
+
+ITEM OPTIONS
+
+replace		true
+mass		true
+ntotal		24
+density		0.2
+field		opls/2024/opls-aa
+build_dir	.
+
+ITEM		END
+
+ITEM GROUPS
+
+epoxy     file epoxy.pdb
+hardener  file hardener.pdb
+
+ITEM END
+
+ITEM CLUSTERS            # one line per molecule:  name group n <copies>
+
+epoxy     epoxy     n 16
+hardener  hardener  n  8
+
+ITEM END
+
+ITEM END
