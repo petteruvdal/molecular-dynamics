@@ -100,16 +100,39 @@ Compile:
 
 ```
 cmake ../cmake           # configuration reading CMake scripts from ../cmake
-#cmake --build .         # REPLACE THIS LINE
+#cmake --build .         # <---- Replace this line with the line below
 make -j 28               # compilation (or type "make"), with 28 being the maximum number of concurrently executed tasks
-```
 
-Optional: install the LAMMPS executable into your system with:
-
-```
-make install    # optional, copy compiled files into installation location
+make install             # optional, copy compiled files into installation location, install the LAMMPS executable into your system
 
 ```
+
+```
+
+module restore lammps
+cd /path/to/lammps/build
+cmake ../cmake 
+make -j 28
+make install
+
+```
+
+With packages:
+```
+cmake ../cmake \
+  -D CMAKE_INSTALL_PREFIX=$HOME/lammps-install \
+  -D BUILD_MPI=on \
+  -D BUILD_OMP=on \
+  -D PKG_MOLECULE=on \
+  -D PKG_KSPACE=on \
+  -D PKG_USER-REAXC=on \
+  -D LAMMPS_EXCEPTIONS=on
+
+make -j28
+make install
+```
+
+
 
 
 ---
