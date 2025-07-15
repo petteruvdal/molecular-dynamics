@@ -51,7 +51,7 @@ module list
 - Git:
 
 ```
-git clone https://github.com/lammps/lammps.git
+git clone -b release https://github.com/lammps/lammps.git lammps
 ```
 
 - Static Linux, go to: https://download.lammps.org/static/
