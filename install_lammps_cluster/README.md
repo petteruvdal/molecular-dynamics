@@ -100,7 +100,7 @@ Compile:
 
 ```
 module restore lammps
-cd /path/to/lammps/build
+cd /storage/eng/esrwwn/lammps/build
 
 cmake ../cmake           # configuration reading CMake scripts from ../cmake
 #cmake --build .         # <---- Replace this line with the line below
@@ -157,13 +157,25 @@ Using SLURM
 # High performance cpu governor
 # #SBATCH --cpu-freq=Performance
 # How much wallclock time will be required?
-#SBATCH --time=12:00:00
+#SBATCH --time=04:00:00
 #SBATCH --ntasks-per-node=1
 #SBATCH --cpus-per-task=28
 
 module restore lammps
-cd /path/to/lammps/build
-cmake ../cmake 
+cd /storage/eng/esrwwn/lammps/build
+
+# Run cmake and make
+cmake ../cmake \
+  -D CMAKE_INSTALL_PREFIX=$HOME/lammps-install \
+  -D BUILD_MPI=on \
+  -D BUILD_OMP=on \
+  -D PKG_MOLECULE=on \
+  -D PKG_KSPACE=on \
+  -D PKG_RIGID=on \
+  -D PKG_USER-REAXC=on \
+  -D LAMMPS_EXCEPTIONS=on \
+  -D BUILD_SHARED_LIBS=on
+
 make -j 28
 make install
 
