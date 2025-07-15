@@ -38,6 +38,18 @@ module load Python
 module load CMake
 ```
 
+---
+
+## 4. Clone and build the lammps directory
+
+
+```
+git clone https://github.com/lammps/lammps.git
+cd lammps
+mkdir build
+cd build
+```
+
 
 ---
 
