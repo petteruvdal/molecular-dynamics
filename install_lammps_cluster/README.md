@@ -9,7 +9,7 @@ This folder documents how to install **LAMMPS (Large-scale Atomic/Molecular Mass
 Navigate to personal storage in the cluster (so that **LAMMPS installation does not take up memory in your user directory)
 
 ```
-cd /storage/username
+cd /storage/eng/username
 ```
 
 ---
