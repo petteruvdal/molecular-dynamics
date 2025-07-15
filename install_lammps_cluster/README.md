@@ -48,14 +48,51 @@ module list
 
 ## 4. Install LAMMPS and navigate directory
 
+- Git:
 
 ```
 git clone https://github.com/lammps/lammps.git
+```
+
+- Static Linux, go to: https://download.lammps.org/static/
+
+- Ubuntu and Debian Linux:
+```
+sudo apt-get install lammps
+```
+
+- Fedora Linux
+```
+dnf install lammps-openmpi
+```
+
+- OpenSuse Linux
+```
+zypper install lammps
+```
+
+- Gentoo Linux
+```
+emerge --ask lammps
+```
+
+- Archlinux build-script
+```
+git clone https://aur.archlinux.org/lammps.git
+```
+
+
+
+
+---
+
+## 4. Navigate directory
+
+```
 cd lammps
 mkdir build
 cd build
 ```
-
 
 ---
 
