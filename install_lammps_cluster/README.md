@@ -38,9 +38,15 @@ module load Python
 module load CMake
 ```
 
+And check using:
+
+```
+module list
+```
+
 ---
 
-## 4. Clone and build the lammps directory
+## 4. Install LAMMPS and navigate directory
 
 
 ```
