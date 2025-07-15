@@ -14,7 +14,7 @@ cd /storage/eng/username
 
 ---
 
-## 2. Check pre-requisits
+### 2. Check pre-requisits
 
 ```
 module spider x
@@ -28,7 +28,7 @@ module spider x
 - LAMMPS/23June2022-kokkos
 
 ---
-## 3. Load relevant modules
+### 3. Load relevant modules
 
 ```bash
 module purge
@@ -46,7 +46,7 @@ module list
 
 ---
 
-## 4. Download LAMMPS
+### 4. Download LAMMPS
 
 - Git:
 
@@ -54,7 +54,7 @@ module list
 git clone -b release https://github.com/lammps/lammps.git lammps
 ```
 
-## (Probably not: download LAMMPS)
+### (Probably not: download LAMMPS)
 
 - Static Linux, go to: https://download.lammps.org/static/
 
@@ -83,20 +83,37 @@ emerge --ask lammps
 git clone https://aur.archlinux.org/lammps.git
 ```
 
-
-
-
 ---
 
-## 4. Navigate directory
+### 4. Navigate directory
 
 ```
 cd lammps
 mkdir build
 cd build
 ```
+---
+
+### 5. Build LAMMPS
+
+Compile: 
+
+```
+cmake ../cmake           # configuration reading CMake scripts from ../cmake
+#cmake --build .         # REPLACE THIS LINE
+make -j 28               # compilation (or type "make"), with 28 being the maximum number of concurrently executed tasks
+```
+
+Optional: install the LAMMPS executable into your system with:
+
+```
+make install    # optional, copy compiled files into installation location
+
+```
+
 
 ---
+
 
 ## 🧠 Notes
 
