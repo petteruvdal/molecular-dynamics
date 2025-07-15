@@ -99,6 +99,9 @@ cd build
 Compile: 
 
 ```
+module restore lammps
+cd /path/to/lammps/build
+
 cmake ../cmake           # configuration reading CMake scripts from ../cmake
 #cmake --build .         # <---- Replace this line with the line below
 make -j 28               # compilation (or type "make"), with 28 being the maximum number of concurrently executed tasks
@@ -106,6 +109,7 @@ make -j 28               # compilation (or type "make"), with 28 being the maxim
 make install             # optional, copy compiled files into installation location, install the LAMMPS executable into your system
 
 ```
+
 
 With packages:
 ```
