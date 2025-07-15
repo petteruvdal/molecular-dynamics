@@ -46,13 +46,15 @@ module list
 
 ---
 
-## 4. Install LAMMPS and navigate directory
+## 4. Download LAMMPS
 
 - Git:
 
 ```
 git clone -b release https://github.com/lammps/lammps.git lammps
 ```
+
+## (Probably not: download LAMMPS)
 
 - Static Linux, go to: https://download.lammps.org/static/
 
