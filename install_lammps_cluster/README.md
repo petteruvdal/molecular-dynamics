@@ -4,7 +4,7 @@ This folder documents how to install **LAMMPS (Large-scale Atomic/Molecular Mass
 
 ---
 
-##� 1. Folder Content
+### 1. Folder Content
 
 Navigate to personal storage in the cluster (so that **LAMMPS installation does not take up memory in your user directory)
 
