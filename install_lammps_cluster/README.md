@@ -1,4 +1,4 @@
-# 🧪 Installing LAMMPS on Cluster Documentatino
+# 🧪 Installing LAMMPS on Cluster Documentation
 
 This folder documents how to install **LAMMPS (Large-scale Atomic/Molecular Massively Parallel Simulator) for molecular dynamics simulations.
 
@@ -14,7 +14,7 @@ cd /storage/username
 
 ---
 
-## 📁 2. Check pre-requisits
+## 2. Check pre-requisits
 
 ```
 module spider x
@@ -26,6 +26,18 @@ module spider x
 - OpenMPI/5.0.3
 - Python/3.12.3
 - LAMMPS/23June2022-kokkos
+
+---
+## 3. Load relevant modules
+
+...
+module purge
+module load GCC
+module load OpenMPI
+module load Python
+module load CMake
+...
+
 
 ---
 
