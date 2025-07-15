@@ -30,13 +30,13 @@ module spider x
 ---
 ## 3. Load relevant modules
 
-...
+```bash
 module purge
 module load GCC
 module load OpenMPI
 module load Python
 module load CMake
-...
+```
 
 
 ---
