@@ -126,7 +126,39 @@ make -j28
 make install
 ```
 
-Using SLURM
+Start interactive session
+```
+
+salloc --nodes=1 --ntasks=1 --mem-per-cpu=3988 --cpus-per-task=8 --partition=interactive --time=01:00:00
+
+```
+
+
+```
+module purge
+module restore lammps
+cd /storage/eng/esrwwn/lammps/build
+
+# Run cmake and make
+cmake ../cmake \
+  -D CMAKE_INSTALL_PREFIX=$HOME/lammps-install \
+  -D BUILD_MPI=on \
+  -D BUILD_OMP=on \
+  -D PKG_MOLECULE=on \
+  -D PKG_KSPACE=on \
+  -D PKG_RIGID=on \
+  -D PKG_USER-REAXC=on \
+  -D LAMMPS_EXCEPTIONS=on \
+  -D BUILD_SHARED_LIBS=on
+
+make -j 28
+make install
+```
+```
+exit
+```
+---
+6. Submit a script
 
 ```
 #!/bin/bash
@@ -160,28 +192,7 @@ Using SLURM
 #SBATCH --time=04:00:00
 #SBATCH --ntasks-per-node=1
 #SBATCH --cpus-per-task=28
-
-module restore lammps
-cd /storage/eng/esrwwn/lammps/build
-
-# Run cmake and make
-cmake ../cmake \
-  -D CMAKE_INSTALL_PREFIX=$HOME/lammps-install \
-  -D BUILD_MPI=on \
-  -D BUILD_OMP=on \
-  -D PKG_MOLECULE=on \
-  -D PKG_KSPACE=on \
-  -D PKG_RIGID=on \
-  -D PKG_USER-REAXC=on \
-  -D LAMMPS_EXCEPTIONS=on \
-  -D BUILD_SHARED_LIBS=on
-
-make -j 28
-make install
-
 ```
-
----
 
 
 
