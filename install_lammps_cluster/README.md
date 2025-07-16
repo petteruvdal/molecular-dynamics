@@ -174,6 +174,10 @@ exit
 #SBATCH --time=04:00:00
 #SBATCH --ntasks-per-node=1
 #SBATCH --cpus-per-task=28
+
+module purge
+module restore lammps
+cd /storage/eng/esrwwn/lammps/build
 ```
 
 
