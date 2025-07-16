@@ -44,6 +44,17 @@ And check using:
 module list
 ```
 
+Save using:
+```
+module save lammps
+```
+
+Reload using:
+```
+module restore lammps
+```
+
+
 ---
 
 ### 4. Download LAMMPS
