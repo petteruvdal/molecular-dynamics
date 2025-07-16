@@ -178,6 +178,8 @@ exit
 module purge
 module restore lammps
 cd /storage/eng/esrwwn/lammps/build
+
+srun ~/scratch/lammps/install/bin/lmp -in my_epoxy_higher_density.in
 ```
 
 
