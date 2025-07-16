@@ -107,35 +107,6 @@ cd build
 
 ### 5. Build LAMMPS
 
-Compile: 
-
-```
-module restore lammps
-cd /storage/eng/esrwwn/lammps/build
-
-cmake ../cmake           # configuration reading CMake scripts from ../cmake
-#cmake --build .         # <---- Replace this line with the line below
-make -j 28               # compilation (or type "make"), with 28 being the maximum number of concurrently executed tasks
-
-make install             # optional, copy compiled files into installation location, install the LAMMPS executable into your system
-
-```
-
-
-With packages:
-```
-cmake ../cmake \
-  -D CMAKE_INSTALL_PREFIX=$HOME/lammps-install \
-  -D BUILD_MPI=on \
-  -D BUILD_OMP=on \
-  -D PKG_MOLECULE=on \
-  -D PKG_KSPACE=on \
-  -D PKG_USER-REAXC=on \
-  -D LAMMPS_EXCEPTIONS=on
-
-make -j28
-make install
-```
 
 Start interactive session
 ```
@@ -144,7 +115,7 @@ salloc --nodes=1 --ntasks=1 --mem-per-cpu=3988 --cpus-per-task=8 --partition=int
 
 ```
 
-
+Compile
 ```
 module purge
 module restore lammps
