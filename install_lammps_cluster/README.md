@@ -150,6 +150,7 @@ exit
 #SBATCH --nodelist dedicated120
 # Job name
 #SBATCH -J sim_0010_270p00_p00
+
 # Send status information to this email address.
 ##SBATCH --mail-user=
 # Send me an e-mail when the job has finished.
@@ -160,20 +161,20 @@ exit
 ##SBATCH -A turbine
 # Partition name
 #SBATCH -p mnf
-# Number of nodes
-#SBATCH --nodes 1
 # Number of tasks
-# #SBATCH --ntasks 1
 # Exclusive node use
-# #SBATCH --exclusive
+##SBATCH --exclusive
 # Do not requeue job on node failure
-#SBATCH --no-requeue
+##SBATCH --no-requeue
 # High performance cpu governor
-# #SBATCH --cpu-freq=Performance
-# How much wallclock time will be required?
+
+##SBATCH --cpu-freq=Performance
+
+#SBATCH --nodes=1
+#SBATCH --ntasks-per-node=16  #1-28, 8 recommended
+#SBATCH --cpus-per-task=1
+#SBATCH --mem-per-cpu=3988
 #SBATCH --time=04:00:00
-#SBATCH --ntasks-per-node=1
-#SBATCH --cpus-per-task=28
 
 module purge
 module restore lammps
