@@ -166,7 +166,7 @@ scancel 785030
 Running on dedicated node
 
 ```
-ssh username@node.csc.warwick.ac.uk
+ssh username@node.machine
 ```
 
 
